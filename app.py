@@ -1,18 +1,12 @@
 from flask import Flask
-from extensions import login_manager
-from extensions import db,migrate
-from extensions import ma,cors
-#blueprints
 
-from blueprints.user import user
-from blueprints.post import post
 
 #app setup
-app=Flask(__name__)
+app=Flask(__name__,instance_relative_config=True)
 
 @app.route('/')
 def hello():
-	return "hello manns"
+    return "Hello mann"
 
 #app run
 if __name__=='__main__':
